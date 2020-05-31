@@ -2,13 +2,13 @@ import { useContext, useLayoutEffect, useState } from "react";
 import { Context } from "../lib/context";
 
 export default () => {
-  let value = useContext(Context);
-  const [darkmode, setDarkmode] = useState(value.darkmode);
+  let context = useContext(Context);
+  const [darkmode, setDarkmode] = useState(context.darkmode);
 
-  useLayoutEffect(() => setDarkmode(value.darkmode), []);
+  useLayoutEffect(() => setDarkmode(context.darkmode), []);
 
   function updateDarkmode() {
-    value.updateDarkmode(!darkmode);
+    context.updateDarkmode(!darkmode);
     setDarkmode(!darkmode);
   }
 
@@ -30,7 +30,7 @@ export default () => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <img src="/images/icons/github.svg" className="github" />
+        <img src="/images/icons/github.svg" className="github" alt="GitHub" />
         GitHub
       </a>
       <style jsx>{`

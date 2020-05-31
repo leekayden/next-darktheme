@@ -1,30 +1,6 @@
 import css from "styled-jsx/css";
 
 export default css.global`
-  /* @font-face {
-    font-family: "GT Walsheim";
-    font-style: normal;
-    font-weight: 400;
-    font-display: block;
-    src: url(/fonts/GT-Walsheim-Regular.woff2) format("woff2");
-  }
-
-  @font-face {
-    font-family: "GT Walsheim";
-    font-style: normal;
-    font-weight: 500;
-    font-display: block;
-    src: url(/fonts/GT-Walsheim-Medium.woff2) format("woff2");
-  }
-
-  @font-face {
-    font-family: "GT Walsheim";
-    font-style: normal;
-    font-weight: 700;
-    font-display: block;
-    src: url(/fonts/GT-Walsheim-Bold.woff2) format("woff2");
-  } */
-
   /* latin */
   @font-face {
     font-family: "Inter";

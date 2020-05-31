@@ -11,7 +11,7 @@ export default css.global`
     min-width: 250px;
     background: var(--bg);
     color: var(--text);
-    transition: background 250ms ease, color 250ms ease;
+    transition: var(--background-transition), var(--text-transition);
     overflow: hidden;
   }
 
@@ -23,6 +23,8 @@ export default css.global`
     --bg: white;
     --text: black;
     --icon: invert(0);
+    --text-transition: color 250ms ease;
+    --background-transition: background 250ms ease;
   }
 
   :root.dark {
@@ -34,5 +36,8 @@ export default css.global`
   a {
     color: var(--text);
     text-decoration: none;
+  }
+  a {
+    transition: var(--text-transition);
   }
 `;
