@@ -20,10 +20,17 @@ export default css.global`
   :root {
     --bg: white;
     --text: black;
+    --icon: invert(0);
   }
 
   :root.dark {
     --bg: black;
     --text: white;
+    --icon: invert(1);
+  }
+
+  a {
+    color: var(--text);
+    text-decoration: none;
   }
 `;
