@@ -64,6 +64,7 @@ export default () => {
           letter-spacing: 0.25px;
           font-weight: 700;
           margin-bottom: 1em;
+          pointer-events: none;
         }
 
         .form-switch {
