@@ -11,14 +11,7 @@ export default class AppDocument extends Document {
       <Html lang="en">
         <script
           dangerouslySetInnerHTML={{
-            __html: /*jsx*/ `
-            if (!window.localStorage.getItem("darkmode")) {
-              window.darkmode=window.matchMedia&&window.matchMedia("(prefers-color-scheme:dark)").matches;
-              window.localStorage.setItem("darkmode",window.darkmode?"true":"false");
-            }
-            window.darkmode=window.localStorage.getItem("darkmode")
-            window.darkmode=="true"?document.getElementsByTagName("html").item(0).classList.toggle("dark"):0;
-            `,
+            __html: /*jsx*/ `window.localStorage.getItem("darkmode")||(window.darkmode=window.matchMedia&&window.matchMedia("(prefers-color-scheme:dark)").matches,window.localStorage.setItem("darkmode",window.darkmode?"true":"false")),window.darkmode=window.localStorage.getItem("darkmode"),"true"==window.darkmode&&document.getElementsByTagName("html").item(0).classList.toggle("dark");`,
           }}
         />
         <Head />
