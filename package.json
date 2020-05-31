@@ -1,0 +1,21 @@
+{
+  "name": "jonathan_ekberg",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "^9.4.4",
+    "next-compose-plugins": "^2.2.0",
+    "next-pwa": "^2.4.1",
+    "nprogress": "^0.2.0",
+    "preact": "^10.4.4",
+    "preact-render-to-string": "^5.1.4",
+    "react": "github:preact-compat/react#1.0.0",
+    "react-dom": "github:preact-compat/react-dom#1.0.0",
+    "react-media-hook": "^0.4.7"
+  }
+}
