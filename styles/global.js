@@ -8,9 +8,11 @@ export default css.global`
     font-family: "Inter", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
       Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
       sans-serif;
+    min-width: 250px;
     background: var(--bg);
     color: var(--text);
     transition: background 250ms ease, color 250ms ease;
+    overflow: hidden;
   }
 
   * {
