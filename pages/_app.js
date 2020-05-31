@@ -4,25 +4,26 @@ import { useMediaPredicate } from "react-media-hook";
 import { normalize, global, fonts } from "../styles";
 import ContextProvider from "../lib/context";
 import { useState, useLayoutEffect, useEffect } from "react";
+import TagManager from "react-gtm-module";
+
+const tagManagerArgs = {
+  gtmId: "GTM-T2RRZ25",
+};
 
 export default ({ Component, pageProps }) => {
   const isDark = useMediaPredicate("(prefers-color-scheme: dark)");
   const [contextValue, setContextValue] = useState(undefined);
 
-  useLayoutEffect(() => {
-    setContextValue({
-      darkmode: window.darkmode == "true",
-      updateDarkmode: updateDarkmode,
-    });
-    console.log("Set context value to:", {
-      darkmode: window.darkmode == "true",
-      updateDarkmode: updateDarkmode,
-    });
-  }, []);
+  useLayoutEffect(
+    () =>
+      setContextValue({
+        darkmode: window.darkmode == "true",
+        updateDarkmode: updateDarkmode,
+      }),
+    []
+  );
 
-  useEffect(() => {
-    console.log("Context value has changed:", contextValue);
-  }, [contextValue]);
+  useEffect(() => TagManager.initialize(tagManagerArgs), []);
 
   function updateDarkmode(value) {
     setContextValue({
