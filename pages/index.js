@@ -14,36 +14,56 @@ export default () => {
 
   return (
     <div>
-      <div className="container">
-        <h1>Darktheme</h1>
-        <label className="form-switch" htmlFor="checkbox">
-          <input
-            id="checkbox"
-            type="checkbox"
-            checked={darkmode}
-            onChange={updateDarkmode}
-          />
-          <i></i>
-        </label>
-      </div>
+      <h1>Darktheme</h1>
+      <label className="form-switch" htmlFor="checkbox">
+        <input
+          id="checkbox"
+          type="checkbox"
+          checked={darkmode}
+          onChange={updateDarkmode}
+        />
+        <i></i>
+      </label>
+      <a
+        className="github-link"
+        href="https://github.com/JonathanEkberg/next-darktheme"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img src="/images/icons/github.svg" className="github" />
+        GitHub
+      </a>
       <style jsx>{`
         div {
           width: 100%;
           height: 100vh;
           display: flex;
+          flex-direction: column;
           justify-content: center;
           align-items: center;
+        }
+
+        .github-link {
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          padding: 1em;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .github {
+          filter: var(--icon);
+          transition: filter 250ms ease;
+          padding-right: 5px;
+          height: 2rem;
         }
 
         h1 {
           letter-spacing: 0.25px;
           font-weight: 700;
           margin-bottom: 1em;
-        }
-
-        .container {
-          display: flex;
-          flex-direction: column;
         }
 
         .form-switch {
