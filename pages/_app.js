@@ -6,10 +6,6 @@ import ContextProvider from "../lib/context";
 import { useState, useLayoutEffect, useEffect } from "react";
 import TagManager from "react-gtm-module";
 
-const tagManagerArgs = {
-  gtmId: "GTM-T2RRZ25",
-};
-
 export default ({ Component, pageProps }) => {
   const isDark = useMediaPredicate("(prefers-color-scheme: dark)");
   const [contextValue, setContextValue] = useState(undefined);
@@ -23,7 +19,11 @@ export default ({ Component, pageProps }) => {
     []
   );
 
-  useEffect(() => TagManager.initialize(tagManagerArgs), []);
+  useEffect(() => {
+    if (process.env.NODE_ENV == "production") {
+      TagManager.initialize({ gtmId: process.env.GOOGLE_TAG });
+    }
+  }, []);
 
   function updateDarkmode(value) {
     setContextValue({
@@ -91,7 +91,7 @@ export default ({ Component, pageProps }) => {
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <meta name="description" content="Description" />
         <meta name="keywords" content="Keywords" />
-        <title>Next.js Boilerplate</title>
+        <title>Next.js Darktheme</title>
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#0070f3" />
         <noscript>This page requires JavaScript in order to function</noscript>
