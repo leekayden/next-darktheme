@@ -3,6 +3,7 @@ import Router from "next/router";
 
 let timeout;
 
+// Timeout only shows loading bar if loading has taken more than 100ms
 const start = () => {
   timeout = setTimeout(NProgress.start, 100);
 };
